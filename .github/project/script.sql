@@ -18,3 +18,6 @@ CREATE TABLE `Ordem` (
 	`user_id` int NOT NULL,
 	PRIMARY KEY (`id`),
 	FOREIGN KEY (`user_id`) REFERENCES `Usuario` (`id`)) ENGINE=InnoDB;
+
+
+ALTER TABLE Usuario ADD role VARCHAR(50);
