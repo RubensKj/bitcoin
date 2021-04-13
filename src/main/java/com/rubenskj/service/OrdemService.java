@@ -6,10 +6,10 @@ import com.rubenskj.model.Usuario;
 import com.rubenskj.repository.OrdemRepository;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.ws.rs.core.SecurityContext;
 import java.time.LocalDate;
+import java.util.List;
 
 @ApplicationScoped
 public class OrdemService {
@@ -28,5 +28,9 @@ public class OrdemService {
         ordem.setStatus("ENVIADA");
 
         ordemRepository.persist(ordem);
+    }
+
+    public List<Ordem> listar() {
+        return ordemRepository.listAll();
     }
 }

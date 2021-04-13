@@ -7,6 +7,7 @@ import io.quarkus.security.jpa.Roles;
 import io.quarkus.security.jpa.UserDefinition;
 import io.quarkus.security.jpa.Username;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,6 +32,10 @@ public class Usuario extends PanacheEntityBase {
     @Roles
     private String role;
 
+    public String getNome() {
+        return nome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -47,6 +52,7 @@ public class Usuario extends PanacheEntityBase {
         this.username = username;
     }
 
+    @JsonbTransient
     public String getPassword() {
         return password;
     }
